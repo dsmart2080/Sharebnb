@@ -3,8 +3,6 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
-
 * Ruby version
 Ruby 2.5.1
 PosgreSQL version 0.18
@@ -31,4 +29,3 @@ Run the web application using these commands:
 4.) Run the Rails server using $rails s.
 5.) Go to localhost:3000/users on web browser to see web application in action.
 
-* ...
