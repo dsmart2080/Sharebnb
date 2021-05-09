@@ -1,0 +1,61 @@
+<h1>Create a new listing!</h1>
+
+<form action="<%= listings_url %>" method="POST">
+    <label for="">Title:
+        <input type="text" name="listing[title]" value="<%= @listing.title %>">
+    </label>
+    <br>
+    <br>
+    <label for="">Description:
+        <textarea name="listing[description]" id="" cols="30" rows="10"></textarea>
+    </label>
+    <br>
+    <br>
+    <label for="">Product:
+        <select name="listing[product]" id="">
+            <option value="wireline">wireline</option>
+            <option value="coil tubing">coil tubing</option>
+            <option value="pump">pump</option>
+            <option value="centralizers">centralizers</option>
+            <option value="drillbits">drillbits</option>
+        </select>
+    </label>
+    <br>
+    <br>
+    <label for="">Location:
+        <input type="text" name="listing[location]" value="<%= @listing.location %>">
+    </label>
+    <br>
+    <br>
+    <label for="">Length (ft):
+        <input type="text" name="listing[length]" value="<%= @listing.length %>">
+    </label>
+    <br>
+    <br>
+    <label for="">Available from:
+        <input type="date" name="listing[available_from]">
+    </label>
+    <br>
+    <br>
+    <label for="">Available until:
+        <input type="date" name="listing[available_until]">
+    </label>
+    <br>
+    <br>
+    <!--
+    <label for="">Creator ID:
+        <input type="text" name="listing[creator_id]" value="<%= params[:user_id] %>">
+    </label>
+    <br>
+    <br>
+    -->
+    <input type="hidden" name="listing[creator_id]" value="<%= params[:user_id] %>">
+    <input type="submit" value="Submit">
+</form>
+<!-- If  -->
+<br>
+
+<form action="<%= user_listings_url(params[:user_id])%>" method="GET">
+    <button><img src="" width="10" height="10"/>Cancel 
+    </button>
+</form>

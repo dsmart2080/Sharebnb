@@ -1,0 +1,25 @@
+<h1>Information about this listing.</h1>
+
+<ul>Title: <%= @listing.title %>
+    <li>Description: <%= @listing.description %></li>
+    <li>Product: <%= @listing.product %></li>
+    <li>Location: <%= @listing.location %></li>
+    <li>Length: <%= @listing.length %></li>
+    <li>Available from: <%= @listing.available_from %></li>
+    <li>Available until: <%= @listing.available_until %></li>
+</ul>
+
+
+<form action="<%= listing_url(@listing) %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete this listing">
+</form>
+<br>
+
+<form action="<%= edit_listing_url(@listing) %>" method="GET">
+    <input type="submit" value="Edit this listing">
+</form>
+<br>
+
+
+<a href="<%= user_listings_url(@listing.creator_id) %>">Back to all your listings</a>

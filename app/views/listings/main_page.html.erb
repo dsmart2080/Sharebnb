@@ -1,0 +1,10 @@
+<h1>Main Page</h1>
+
+<ul>
+    <% @listings.each do |listing| %>
+        <li>
+            <a href="<%= listing_url(listing.id) %>">Title: <%= listing.title %></a>
+        </li>
+        <br>
+    <% end %>
+</ul>

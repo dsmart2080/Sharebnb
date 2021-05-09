@@ -1,0 +1,18 @@
+<h1>Here is your user account information.</h1>
+
+
+
+<ul><%= @user.username %>
+    <li>Email: <%= @user.email %></li>
+    <li>Company: <%= @user.company %></li>
+    <li>Location: <%= @user.location %></li>
+</ul>
+
+
+
+<form action="<%= user_listings_url(@user) %>" method="GET">
+    <button><%= image_tag("glass.png", width:'15px') %>
+        Click to see all listings for this user
+    </button>
+</form>
+<br>

@@ -1,0 +1,22 @@
+<h1>Welcome to Sharebnb</h1>
+
+<div class="sign-in-box">
+    <div class="SignInBanner">Sign please
+    </div>
+    <br>
+    <br>
+
+    <form action="<%= session_url %>" method="POST">
+        <label for="">Username:
+            <input type="text" name="user[username]">
+        </label>
+        <br>
+        <br>
+        <label for="">Password:
+            <input type="password" name="user[password]">
+        </label>
+        <br>
+        <br>
+        <input type="submit" value="Sign in">
+    </form>
+</div>

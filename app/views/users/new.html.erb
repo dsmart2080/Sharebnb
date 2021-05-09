@@ -1,0 +1,31 @@
+<h1>Sign Up for Sharebnb !</h1>
+
+<form action="<%= users_url %>" method="POST">
+    <label for="">Username:
+        <input type="text" name="user[username]" value="<%= @user.username %>">
+    </label>
+    <br>
+    <br>
+    <label for="">Email:
+        <input type="text" name="user[email]" value="<%= @user.email %>">
+    </label>
+    <br>
+    <br>
+    <label for="">Password:
+        <input type="password" name="user[password]">
+    </label>
+    <br>
+    <br>
+    <label for="">Company:
+        <input type="text" name="user[company]" value="<%= @user.company %>">
+    </label>
+    <br>
+    <br>
+    <label for="">Location:
+        <input type="text" name="user[location]" value="<%= @user.location %>">
+    </label>
+    <br>
+    <br>
+
+    <input type="submit" value="Sign up">
+</form>

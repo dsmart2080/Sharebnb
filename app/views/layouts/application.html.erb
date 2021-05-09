@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sharebnb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li></li>
+        <li>Location</li>
+        <li>Check in</li>
+        <li>Check out</li>
+        <li>Guests</li>
+        <li>Search</li>
+      </ul>  
+    </nav>
+
+    <%= image_tag("logos/world_location.jpg") %> 
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <% if logged_in? %>
+      <h2>Welcome to the Sharebnb, <%= current_user.username %></h2>
+      <form action="<%= session_url %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Logout">
+      </form>
+    <% else %>
+    
+    <div class="SignUpSignInBubbles">
+    <p>
+      <div class="SignUpForSpotMarket">
+      <a href="<%= new_user_url %>">Sign up for Sharebnb</a>
+      </div>
+      <div class="SignInToSpotMarket">
+      <a href="<%= new_session_url %>">Sign in to Sharebnb</a>
+      </div>
+    </p>
+    </div>
+
+
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
