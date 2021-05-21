@@ -1,4 +1,5 @@
 <h1>All <%= @user.username %>'s listings!</h1>
+<br>
 
 <ul>
     <% @listings.each do |listing| %>
@@ -8,15 +9,14 @@
         <br>
     <% end %>
 </ul>
+<br>
 
 <form action="<%= new_user_listing_url(params[:user_id]) %>" method="GET">
     <input type="submit" value="Create a listing!">
 </form>
-
-
-
+<br>
 <form action="<%= user_url(params[:user_id]) %>" method="GET">
-    <button><img src="" width="10" height="10"/>Go back to user's show page
+    <button><img src="glass.png" width="20" height="10"/>Go back to user's show page
     </button>
     <br>
 </form>

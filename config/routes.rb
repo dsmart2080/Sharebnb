@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   #     get 'main_page', to: '/listings/main_page'
   #   end
   # end
-  
-  
 
   resources :users, only: [:new, :create, :show, :index] do
     resources :listings, only: [:index, :new]

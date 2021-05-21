@@ -1,0 +1,35 @@
+.Explore_nearby {
+    font-size: 30px;
+    border: 2px solid black;
+    display: flex;
+    margin: 10px;
+    height: 100px;
+    padding: 20px;
+}
+
+.img {
+    width:2000px;
+    height: 40px;
+}
+
+.Live_anywhere {
+    font-size: 30px;
+}
+
+.Discover_Experiences {
+    font-size: 30px;
+
+}
+
+.Inspiration_for_future_getaways {
+    font-size: 30px;
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.one {
+    flex: 1 1 auto;
+}

@@ -4,7 +4,7 @@
     <title>Sharebnb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <!-- <link rel="stylesheet" href="/assets/stylesheets/reset.css">-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,41 +13,99 @@
     <nav>
       <ul>
         <li></li>
-        <li>Location</li>
-        <li>Check in</li>
-        <li>Check out</li>
-        <li>Guests</li>
-        <li>Search</li>
+        <li class="Sharebnb_text">Sharebnb</li>
+        <li class="Places_to_stay_text">Places to Stay</li>
+        <li class="Experiences_text">Experiences</li>
+        <li class="Online_Experiences_text">Online Experiences</li>
+        
+        <li class="Create_New_Account">
+         <a href="<%= new_user_url %>">Create Account</a>
+        </li>
+
+        <li class="Sign_in">
+          <a href="<%= new_session_url %>">Sign in</a>
+        </li>
       </ul>  
     </nav>
-
-    <%= image_tag("logos/world_location.jpg") %> 
-    <br>
+    <div class="GreatOutdoors-container">
+      <%= image_tag("logos/GreatOutdoors.png") %> 
+    </div>
+    
     <br>
     <br>
     <br>
 
     <% if logged_in? %>
-      <h2>Welcome to the Sharebnb, <%= current_user.username %></h2>
+      <h2 class="Welcome">Welcome to the Sharebnb, <%= current_user.username %></h2>
+      <br>
       <form action="<%= session_url %>" method="POST">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Logout">
       </form>
     <% else %>
-    
-    <div class="SignUpSignInBubbles">
+     <div class="SignUpSignInBubbles">
     <p>
-      <div class="SignUpForSpotMarket">
-      <a href="<%= new_user_url %>">Sign up for Sharebnb</a>
+      <div class="CreateAccount">
+      <a href="<%= new_user_url %>">Create Account for Sharebnb</a>
       </div>
-      <div class="SignInToSpotMarket">
+      <div class="SignIn">
       <a href="<%= new_session_url %>">Sign in to Sharebnb</a>
       </div>
     </p>
     </div>
-
-
+    
+    
     <% end %>
+
+    <h2 class="Explore_nearby">Explore nearby</h2>
+      <br>
+      <div class="explore-container">
+      <%= image_tag('logos/ExploreNearby.png') %>
+      </div>
+      <br>
+      <br>
+      <br>
+
+
+
+    <h3 class="Live_anywhere">Live anywhere</h3>
+    <br>
+    <div class ="container">                  <!-- parent container for flexbox --->
+      <%= image_tag('logos/a.png', class:"item") %>             <!-- child item --->
+      <%= image_tag('logos/dogOnBed.jpg', class:"item") %>      <!-- child item --->
+      <%= image_tag('logos/waterBoat.jpg', class:"item") %>     <!-- child item --->
+      <%= image_tag('logos/woodHouse.jpg', class:"item") %>     <!-- child item --->
+    </div>
+    
+    
+    
+    
+    <br>
+    <br>
+    <br>
+    <h4 class="Discover_Experiences">Discover Experiences</h4>
+    <br>
+    <div class="discover-container">
+      <%= image_tag('DiscoverExperiences/sheep.png') %>
+      <%= image_tag('DiscoverExperiences/ipad.png') %>
+      <%= image_tag('DiscoverExperiences/horse.png') %>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <h5 class="Inspiration_for_future_getaways">Inspiration for future getaways</h5>
+      <br>
+      <div class="front-container">
+        <div>Phoenix</div>
+        <div>HotSprings</div>
+        <div>Los Angeles</div>
+        <div>San Diego</div>
+    </div>
+    <br>
+    <br>
+    <br>
+
     <%= yield %>
   </body>
 </html>
