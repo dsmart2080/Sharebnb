@@ -55834,3 +55834,42 @@ puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
 puma (3.12.6) lib/puma/server.rb:476:in `process_client'
 puma (3.12.6) lib/puma/server.rb:334:in `block in run'
 puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-05-21 10:30:41 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/d3/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/d3/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb (6.2ms)
+Completed 200 OK in 24ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listings/8" for 127.0.0.1 at 2021-05-21 10:35:48 -0700
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mListing Load (4.2ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/listings_controller.rb:30
+  Rendering listings/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (2.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Listing"], ["name", "hotel_photo"], ["LIMIT", 1]]
+  ↳ app/views/listings/show.html.erb:27
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/listings/show.html.erb:27
+  Rendered listings/show.html.erb within layouts/application (171.6ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yMNLBjhva77kq0vGOK1k3A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21
+Completed 200 OK in 335ms (Views: 257.1ms | ActiveRecord: 49.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6833fcbf03bc2aa9275d91c772ea1a52aa7eea55/ipad" for 127.0.0.1 at 2021-05-21 10:35:48 -0700
+Processing by ActiveStorage::BlobsController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6833fcbf03bc2aa9275d91c772ea1a52aa7eea55", "filename"=>"ipad"}
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/d3/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (3.0ms) [0m[34mGenerated URL for file at key: Y2Cv1Ld5J5fJQdt7vhjYsqpD (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRXVEpEZGpGTVpEVktOV1pLVVdSME4zWm9hbGx6Y1hCRUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSXphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhWEJoWkNJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFYQmhaQVk3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUT0iLCJleHAiOiIyMDIxLTA1LTIxVDE3OjQwOjQ5LjAyM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b37ad080a97ee5394f7c33c6556b3386c3ae95ca/ipad?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22ipad%22%3B+filename%2A%3DUTF-8%27%27ipad)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRXVEpEZGpGTVpEVktOV1pLVVdSME4zWm9hbGx6Y1hCRUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSXphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhWEJoWkNJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFYQmhaQVk3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUT0iLCJleHAiOiIyMDIxLTA1LTIxVDE3OjQwOjQ5LjAyM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b37ad080a97ee5394f7c33c6556b3386c3ae95ca/ipad?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22ipad%22%3B+filename%2A%3DUTF-8%27%27ipad
+Completed 302 Found in 10ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRXVEpEZGpGTVpEVktOV1pLVVdSME4zWm9hbGx6Y1hCRUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSXphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhWEJoWkNJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFYQmhaQVk3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUT0iLCJleHAiOiIyMDIxLTA1LTIxVDE3OjQwOjQ5LjAyM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b37ad080a97ee5394f7c33c6556b3386c3ae95ca/ipad?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22ipad%22%3B+filename%2A%3DUTF-8%27%27ipad" for 127.0.0.1 at 2021-05-21 10:35:49 -0700
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"ipad\"; filename*=UTF-8''ipad", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRXVEpEZGpGTVpEVktOV1pLVVdSME4zWm9hbGx6Y1hCRUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSXphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhWEJoWkNJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFYQmhaQVk3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUT0iLCJleHAiOiIyMDIxLTA1LTIxVDE3OjQwOjQ5LjAyM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b37ad080a97ee5394f7c33c6556b3386c3ae95ca", "filename"=>"ipad"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
